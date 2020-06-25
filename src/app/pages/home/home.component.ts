@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Photo} from "../../models/photo";
-import {PreloadService} from "../../services/preload/preload.service";
+import { Component } from '@angular/core';
+import { Photo } from '../../models/photo';
+import { PreloadService } from '../../services/preload/preload.service';
 
 @Component({
   selector: 'app-home',

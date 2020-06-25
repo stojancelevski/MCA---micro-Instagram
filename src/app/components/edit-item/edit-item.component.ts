@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
-import {PreloadService} from "../../services/preload/preload.service";
-import {Photo} from "../../models/photo";
-import {ApiService} from "../../services/api/api.service";
-import {SnackbarService} from "../../services/snackbar/snackbar.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PreloadService } from '../../services/preload/preload.service';
+import { Photo } from '../../models/photo';
+import { ApiService } from '../../services/api/api.service';
+import { SnackbarService } from '../../services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-form',
@@ -35,14 +35,15 @@ export class EditItemComponent implements OnInit {
         title: [this.item.title, Validators.required],
         url: [this.item.url, Validators.required],
         thumbnailUrl: [this.item.thumbnailUrl, Validators.required]
-      })
-    })
+      });
+    });
 
   }
 
   submit() {
 
     this.apiService.updateItem(this.item.id, this.itemForm.value).subscribe(() => {
+      this.itemForm.reset();
       this.router.navigateByUrl('/photos').then(() => {
         this.snackbarService.openSnackBar('Successfully Edited', 'EDIT');
       });

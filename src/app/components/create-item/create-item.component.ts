@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ApiService} from "../../services/api/api.service";
-import {Router} from "@angular/router";
-import {SnackbarService} from "../../services/snackbar/snackbar.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../../services/api/api.service';
+import { Router } from '@angular/router';
+import { SnackbarService } from '../../services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-create-item',
@@ -23,17 +23,18 @@ export class CreateItemComponent implements OnInit {
       title: ['', Validators.required],
       url: ['', Validators.required],
       thumbnailUrl: ['', Validators.required]
-    })
+    });
   }
 
   create() {
     this.apiService.createItem(this.createForm.value).subscribe(() => {
+      this.createForm.reset();
       this.router.navigateByUrl('/photos').then(() => {
         this.snackbarService.openSnackBar('Successfully Created', 'CREATE');
-      })
+      });
     }, error => {
       this.snackbarService.openSnackBar(error.message, 'ERROR');
-    })
+    });
   }
 
 }

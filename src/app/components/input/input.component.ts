@@ -1,8 +1,8 @@
-import {Component, forwardRef, Input} from '@angular/core';
-import {NG_VALUE_ACCESSOR} from "@angular/forms";
+import { Component, forwardRef, Input } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'mca-input',
+  selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
   providers: [
@@ -19,15 +19,15 @@ export class InputComponent {
   @Input() type: string;
   @Input() disabled: boolean;
 
-  public _value: string;
+  public value: string;
 
   onChange: any = () => {
-  };
+  }
   onTouch: any = () => {
-  };
+  }
 
   writeValue(obj: any): void {
-    this._value = obj;
+    this.value = obj;
   }
 
   registerOnChange(fn: any): void {

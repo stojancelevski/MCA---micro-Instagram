@@ -1,16 +1,16 @@
 <form [formGroup]="createForm">
   <div style="text-align: center">
-    <mca-input [type]="'text'" [placeholder]="'Enter title'" [name]="'Title'"
+    <app-input [type]="'text'" [placeholder]="'Enter title'" [name]="'Title'"
                formControlName="title">
-    </mca-input>
+    </app-input>
     <br>
-    <mca-input [type]="'text'" [placeholder]="'Enter url of the photo'" [name]="'Url'"
+    <app-input [type]="'text'" [placeholder]="'Enter url of the photo'" [name]="'Url'"
                formControlName="url">
-    </mca-input>
+    </app-input>
     <br>
-    <mca-input [type]="'text'" [placeholder]="'Enter Thumbnail Url of the photo'"
+    <app-input [type]="'text'" [placeholder]="'Enter Thumbnail Url of the photo'"
                [name]="'Thumbnail Url'" formControlName="thumbnailUrl">
-    </mca-input>
+    </app-input>
     <br>
     <button mat-button color="primary" [disabled]="!createForm.valid" (click)="create()">Submit</button>
 

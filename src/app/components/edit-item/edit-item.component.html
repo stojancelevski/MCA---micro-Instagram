@@ -1,24 +1,24 @@
 <form [formGroup]="itemForm">
   <div style="text-align: center">
-    <mca-input [type]="'number'" [disabled]="true" [placeholder]="'Enter id'" [name]="'Id'"
+    <app-input [type]="'number'" [disabled]="true" [placeholder]="'Enter id'" [name]="'Id'"
                formControlName="id">
-    </mca-input>
+    </app-input>
     <br>
-    <mca-input [type]="'number'" [disabled]="true" [placeholder]="'Enter album id'"
+    <app-input [type]="'number'" [disabled]="true" [placeholder]="'Enter album id'"
                [name]="'Album id'" formControlName="albumId">
-    </mca-input>
+    </app-input>
     <br>
-    <mca-input [type]="'text'" [placeholder]="'Enter title'" [name]="'Title'"
+    <app-input [type]="'text'" [placeholder]="'Enter title'" [name]="'Title'"
                formControlName="title">
-    </mca-input>
+    </app-input>
     <br>
-    <mca-input [type]="'text'" [placeholder]="'Enter url of the photo'" [name]="'Url'"
+    <app-input [type]="'text'" [placeholder]="'Enter url of the photo'" [name]="'Url'"
                formControlName="url">
-    </mca-input>
+    </app-input>
     <br>
-    <mca-input [type]="'text'" [placeholder]="'Enter Thumbnail Url of the photo'"
+    <app-input [type]="'text'" [placeholder]="'Enter Thumbnail Url of the photo'"
                [name]="'Thumbnail Url'" formControlName="thumbnailUrl">
-    </mca-input>
+    </app-input>
     <br>
     <button mat-button color="primary" [disabled]="!itemForm.valid" (click)="submit()">Submit</button>
   </div>

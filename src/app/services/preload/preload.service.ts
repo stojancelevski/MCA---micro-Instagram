@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Photo} from "../../models/photo";
-import {ApiService} from "../api/api.service";
+import { Injectable } from '@angular/core';
+import { Photo } from '../../models/photo';
+import { ApiService } from '../api/api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class PreloadService {
   }
 
   public getItemById(id: number): Photo {
-    return this.items.find(item => item.id === id)
+    return this.items.find(item => item.id === id);
   }
 
   load() {
@@ -24,7 +24,7 @@ export class PreloadService {
       this.api.getItems().subscribe(items => {
         this.items = items;
         resolve(true);
-      })
-    })
+      });
+    });
   }
 }

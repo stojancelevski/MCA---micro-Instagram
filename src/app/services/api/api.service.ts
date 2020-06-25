@@ -1,20 +1,17 @@
-import {Injectable, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Photo} from "../../models/photo";
-import {Observable} from "rxjs";
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Photo } from '../../models/photo';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService implements OnInit {
-  url = 'http://jsonplaceholder.typicode.com/photos'
+export class ApiService{
+  url = 'http://jsonplaceholder.typicode.com/photos';
 
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit(): void {
-
-  }
 
   getItems(): Observable<Photo[]> {
     return this.http.get<Photo[]>(this.url);
@@ -31,7 +28,7 @@ export class ApiService implements OnInit {
 
   updateItem(id, body): Observable<any> {
     const header = this.resolveHeaders('application/json; charset=UTF-8');
-    return this.http.put<any>(`${this.url}/${id}`, {body}, {headers: header})
+    return this.http.put<any>(`${this.url}/${id}`, {body}, {headers: header});
   }
 
   deleteItem(id): Observable<any> {
