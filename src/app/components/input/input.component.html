@@ -1,0 +1,6 @@
+<mat-form-field appearance="fill">
+  <mat-label>{{name}}</mat-label>
+  <input [type]="type" matInput [disabled]="disabled" [placeholder]="placeholder"
+         [value]="_value"
+         (change)="itemChange($event)">
+</mat-form-field>

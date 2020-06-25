@@ -1,0 +1,19 @@
+<mat-grid-list cols="5">
+  <mat-grid-tile *ngFor="let photo of items" style="padding-bottom: 5px">
+    <mat-card [routerLink]="['/photos', photo.id]" style="text-align: center;cursor: pointer">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+      <mat-card-content>
+        <mat-card-subtitle>
+          {{photo.title}}
+        </mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+></div>

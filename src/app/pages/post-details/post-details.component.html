@@ -1,0 +1,18 @@
+<mat-card class="mat-drawer-container">
+  <img mat-card-image [src]="item.url" [alt]="item.title">
+  <mat-card-title>
+    {{item.title}}
+  </mat-card-title>
+  <mat-card-footer>
+    <mat-card-subtitle>Id: {{item.id}}</mat-card-subtitle>
+    <mat-card-subtitle>
+      Album Id: {{item.albumId}}
+    </mat-card-subtitle>
+    <button mat-fab color="primary" [routerLink]="['/photos',this.item.id,'edit']">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-fab color="warn" (click)="openDialog()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-footer>
+</mat-card>

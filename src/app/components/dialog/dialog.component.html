@@ -1,0 +1,10 @@
+<mat-dialog-content class="mat-typography">
+  You are about to delete a photo.
+  <br>
+  Click <b>Confirm</b> if you want to continue
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Confirm</button>
+</mat-dialog-actions>
+
