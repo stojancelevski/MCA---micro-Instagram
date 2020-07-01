@@ -6,7 +6,7 @@ import { ApiService } from '../api/api.service';
   providedIn: 'root'
 })
 export class PreloadService {
-  private items: Photo[] = null;
+  items: Photo[] = null;
 
   constructor(private api: ApiService) {
   }

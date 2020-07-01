@@ -9,7 +9,7 @@ import { EditGuard } from './guards/edit/edit.guard';
 import { CreateGuard } from './guards/create/create.guard';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'photos', component: HomeComponent,
   },

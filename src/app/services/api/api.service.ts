@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Photo } from '../../models/photo';
 import { Observable } from 'rxjs';
@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService{
+export class ApiService {
   url = 'http://jsonplaceholder.typicode.com/photos';
 
   constructor(private http: HttpClient) {
@@ -15,10 +15,6 @@ export class ApiService{
 
   getItems(): Observable<Photo[]> {
     return this.http.get<Photo[]>(this.url);
-  }
-
-  getItemById(id: number): Observable<Photo> {
-    return this.http.get<Photo>(`${this.url}/${id}`);
   }
 
   createItem(body): Observable<any> {
